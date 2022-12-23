@@ -1,8 +1,16 @@
 version: '3'
 services:
   nest-api-docker:
+    image: "image"
+    command: "command"
+    entrypoint: "entrypoint"
     environment:
       - NODE_ENV=development
+    cap_add:
+      - SYS_PTRACE
+    cap_drop:
+      - SYSLOG
+    user: "user"
     build:
       context: .
       dockerfile: Dockerfile
